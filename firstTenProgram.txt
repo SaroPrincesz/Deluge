@@ -1,0 +1,113 @@
+1. Initialise a Variable with a date value and Print it.
+
+currentDate = today;
+zoho.currentdate;
+
+
+
+2. Initialise a variable with a date & time value and Print it.
+
+currentDate = today;
+info "today Function: "+ currentDate;
+currentTimeDate = zoho.currenttime;
+info "Zoho.currenttime Function: "+currentTimeDate;
+info "toString Function: "+toString(currentTimeDate, "dd MMM, yyyy 'at' hh:mm:ss a, EEE", "IST");
+            //11 Sep, 2024 at 01:25:35 PM, Wed
+info zoho.currenttime.getDateTime();
+
+
+
+3. Given two input, print the addition of the numbers present in both inputs.
+   a = 2, b = 5; Using Arithmetic operator (+, -, *, /) print values; 
+
+a = 2;
+b = 5;
+info a+b;
+info b-a;
+info a*b;
+info b/a;
+
+   Karan mark for subjects Tamil and English is 65, 60 respectively. 
+   if Student get more than 50 in both subjects print pass else print fail.
+
+Tamil = 65;
+English = 60;
+
+if ( Tamil > 50 && English > 50 ) 
+{
+	info "Pass" ;
+}else 
+{
+	info "Fail";
+}
+
+
+4. Average
+
+info (10+15+27+49+32) / 5;
+array = {10, 15, 27, 49, 32};
+total = 0;
+for each arr in array
+{
+	total += arr;
+}
+info total / array.size();
+info array.average();
+
+
+
+5. Smallest in two numbers
+
+a = 5;
+b = 3;
+if ( a < b ) 
+{
+	info "Smallest No is: " + a ;
+}else 
+{
+	info  "Smallest No is: " + b ;
+}
+
+
+
+6. Square of a numbers
+
+a = 5;
+info a*a;
+info a.power(2);
+
+
+7. Given a number, get the absolute value of it and
+   print the power of 3 for the absolute value.
+
+a = -5;
+absoluteValue = a.abs() ;
+info absoluteValue.power(3);
+
+
+8. print "Equals" if the ceiling for the first number is equals to 
+   flooring for the second number and vice versa.
+
+a = 5.1;
+b = 6.6;
+aCeil = a.ceil();
+bFloor = b.floor();
+aFloor = a.floor();
+bCeil = b.ceil();
+if ( aCeil == bFloor || aFloor == bCeil ) 
+{
+	info "Equals";
+}else 
+{
+	info "Not Equals" ;
+}
+
+
+9. add, sub, mul, div in two numbers. print the same order
+
+a = 4;
+b = 5;
+info "Addition: " + (a+b);    //Without parentheses concat string   45
+info "Subtraction: " + (a-b);    // Without parentheses string bigint not mul ERROR
+info "Multiplication: " + a*b;
+info "Division: " + a/b;

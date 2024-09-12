@@ -1,0 +1,70 @@
+21. Given a number, 
+    If it is even, change it to the next odd number
+    if it is odd, change it to the square of the number. Print the changed number in both cases
+
+    a = 3;
+if ( a.isEven() ) 
+{
+	info a+1 ;
+}else 
+{
+	info a.power(2) ;
+}
+
+
+
+23. print the difference between the flooring value, ceiling value
+    print the absolute value.
+
+a = -5.1;
+info a.ceil() - a.floor() ;
+info a.abs() ;
+
+
+24. first 7 characters
+
+userInput = "Zoho Corporation Pvt Ltd";
+info userInput.left(7);
+info userInput.subString(0, 7) ;
+info userInput.subText(0,7);
+info userInput.mid(0,7);
+
+25. last 7 characters
+
+userInput = "Zoho Corporation Pvt Ltd";
+info userInput.subString(userInput.length()-7, userInput.length()) ;
+info userInput.subText(userInput.length()-7, userInput.length());
+info userInput.mid(userInput.length()-7, userInput.length());
+info userInput.right(7);
+
+
+26. print number of times ".." specific string occured in the string.
+
+userInput = "Zoho Corporation Zoho Corporation";
+info userInput.getOccurenceCount("Zoho") ;
+
+
+27. print whether the string starts and ends with the same word or not
+
+userInput = "Zoho Corporation Zoho";
+list = userInput.toList(" ");
+if ( list.get(0) == list.get(list.size()-1) )
+{
+	info list.get(0) ;
+}else 
+{
+	info "No Common Word in start and end of the string" ;
+}
+
+
+
+28. Remove all the spaces present in the string and print it.
+
+userInput = "Zoho Corporati14on pvt ltd14";
+info userInput.remove(" ") ;
+
+30. "Zoho is best".Print the words that occurs before "is"
+
+userInput = "Zoho is best";
+info userInput.getPrefix("is") ; 
+

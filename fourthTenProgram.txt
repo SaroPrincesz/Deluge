@@ -1,0 +1,85 @@
+31. "Zoho is best". Print the words that occurs after "is"
+
+userInput = "Zoho is best";
+info userInput.getSuffix("is") ;
+
+
+32. print the length of each words
+
+userInput = "Zoho Corporation Pvt Ltd";
+list = userInput.toList(" ");
+for each word in list
+{
+	info length(word);
+}
+
+
+
+34. Given a sentence, convert the first alphabet of every word in the sentence 
+    to uppercase and print it.
+
+    userInput = "zoho corporation pvt ltd";
+info userInput.proper() ;
+
+
+
+
+35. Given the sentence "Try 2 be the best version of yourself 4 you"
+    remove all the numeric values present and print it.
+
+    userInput = "Try 20 345678 456789 be the best version of yourself 4 you";
+    info userInput.getAlpha() ;
+    info userInput.replaceAll("[0-9]", "");
+
+
+36. given sentence "Zoho Corporation Zoho Corporation";
+    replace 2ed occurrence of word "Zoho" With "Pvt"
+    replace 2ed occurrence of word "Corporation" With "Ltd"
+    print the final string
+
+
+
+
+
+37. Find the position of Specific String in list
+
+stationaryItem = {"Pencil", "Eraser", "Ruler", "Pen", "Compass", "Marker"};
+info stationaryItem.indexOf("Ruler") ;
+
+
+38. {"Pencil", "Eraser", "Ruler", "Pen", "Compass", "Marker"} In the list, 
+    Remove ruler and compass and add them to a separate geometrical 
+    stationary list which already contains the items divider and Protractor.
+
+    stationaryItem = {"Pencil", "Eraser", "Ruler", "Pen", "Compass", "Marker"};
+stationaryItem.removeElement("Ruler");
+stationaryItem.removeElement("Compass");
+geometricalStationary = {"Divider", "Protactor"};
+stationaryItem.addAll(geometricalStationary) ;
+info stationaryItem;
+
+
+
+39. Amy's mother has created a shopping list as follows, 
+    {"Ketchup", "Water Bottle", "Milk", "Butter", "Chips", "Flour"}
+    At the same Amy also has a shopping list of her own which contains
+    {"Milk", "Flour", "Chips", "Chocolates", "Napkins"}
+    Create a combined list out of the two lists without any dublicates
+
+list1 = {"Ketchup", "Water Bottle", "Milk", "Butter", "Chips", "Flour"};
+list2 = {"Milk", "Flour", "Chips", "Chocolates", "Napkins"};
+list1.addAll(list2);
+info list1.distinct();
+
+
+40. {10, 20, 30, 40, 50, 60, 70, 80}
+    Extract all the Elements present between 30 and 70
+
+userInput = {10, 20, 30, 40, 50, 60, 70, 80};
+for each inputs in userInput
+{
+	if ( inputs >= 30 && inputs <= 70 ) 
+    {
+		info inputs ;
+    }
+}

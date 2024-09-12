@@ -1,0 +1,177 @@
+51. There are two maps with different sets of items.
+    Merge both the maps to create a single one.
+
+Products1 = Collection("Pencil":20, "Ruler" : 10, "Eraser" : 4, "Sharpner": 32 , "Pen":12);
+Products2 = Collection(1 : "Zoho", 2:"Corporation" , 3: "Pvt", 4: "Ltd");
+info Products1 ;
+Products1.insertAll(Products2);
+info Products2 ;
+info Products1 ;
+
+
+52. Following Gym equipment whose prices have been raised are as follows, 
+    Dumbbells, Treadmill and Gym Bike. Javed is headed to buy such equipment and
+    contains a shopping list of his own with the prices also mentioned as follows, 
+    {"Gloves" : 50, "Dumbbells": 200, "Plates" : 115, "Treadmill" : 500, "Bench" : 100, "Gym Bike": 800}
+    The price of the dumbbell is increased to 300, Treadmill to 650 and GymBike to 880. Update
+    Javed's shopping list with these increased prices.
+
+    gymEquipments = {"Gloves" : 50, "Dumbbells": 200, "Plates" : 115, "Treadmill" : 500, "Bench" : 100, "Gym Bike": 800};
+gymEquipments.update("Dumbbells" , 300);
+gymEquipments.update("Treadmill" , 650);
+gymEquipments.update("Gym Bike" , 880);
+info gymEquipments ;
+
+
+
+
+53. Enter 3 subject marks and print/find whether the student is passed or failed.
+    Use AND operator 
+    Use OR operator
+    Use NOT operator
+
+subject1 = 12;
+subject2 =35;
+subject3 = 80;
+if ( subject1 >= 35 && subject2 >= 35 && subject3 >= 35 ) 
+{
+	info "And Pass" ;
+}
+if ( subject1 >= 35 ||  subject2 >= 35 ||  subject3 >= 35 ) 
+{
+	info "Or Pass" ;
+}
+if ( (subject1+subject2+subject3) != 175 ) 
+{
+	info "Not Fail";
+}
+
+
+
+54. Input a date and print the season ( one of the 4 seasons) which it belongs to.
+
+userInput = toString(zoho.currenttime, "dd-MMM-yyyy hh:mm:ss", "IST");
+month = userInput.getMonth();
+if ( month == 12 ||  month == 1 || month == 2 ) 
+{
+	info "Winter" ;
+}else if ( month == 3 ||  month == 4 || month == 5 ) 
+{
+	info "Spring" ;
+}else if ( month == 6 ||  month == 7 || month == 8 ) 
+{
+	info "Summer" ;
+}else if ( month == 9 ||  month == 10 || month == 11 ) 
+{
+	info "Autumn" ;
+}
+
+
+
+55. For a given number, Print its multiplication table (say up to 10)
+    Using Collections
+
+   userInput = 3;
+list = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+for each val in list
+{
+	info val + " * " + userInput + " = " + (val*userInput);
+}
+
+
+
+56. A HR wants to maintain a map between Employee IDs and Employee names.
+    Initialize the employee information in the map with these details, 
+    {15: "Mohan", 56 : "Srishti", 23 : "Arun", 75: "Dinesh", 33: "Karthik",
+    94: "Santhosh", 2: "Vignesh", 13:"Sandeep", 69:"Navin", 19: "Murugan"}
+    Print the employee Names in Ascending Order
+    The Employee Id of Santhosh is being modified to 105 from 94, Make the change 
+        in the map accordingly.
+    Check if karthick is present as an Employee or not
+    How many Employees information is present on the map maintained by the HR Currently.
+    Srishti has decided to quit the team. The HR needs to remove her details from the
+        map. Print the map once it has been updated.
+
+ employee = {15: "Mohan", 56 : "Srishti", 23 : "Arun", 75: "Dinesh", 33: "Karthik",
+    94: "Santhosh", 2: "Vignesh", 13:"Sandeep", 69:"Navin", 19: "Murugan"};
+sortedEmployee = employee.sort(true);
+info "Employee Names: ";
+for each emp in sortedEmployee
+{
+	info emp ;
+}
+employee.delete("Santhosh");
+employee.insert(105 : "Santhosh");
+info "Update santhosh id: "  + employee;
+
+if ( employee.contains("Karthik") ) 
+{
+	info "Yes, Karthik is a Employee" ;
+}else 
+{
+	info "No, Karthik is not a Employee" ;
+}
+info "Total employees: " + employee.size() ;
+employee.delete("Srishti");
+info "Once Srishti quit: " + employee;
+
+
+
+57. An Employee gets 25000 as Salary. Salary breakup as given below 
+    Basic - 12000
+    HRA - 5000
+    Allowance - 3000
+    Others - 5000
+    Calculate the current salary when Basic is increased 20% and Allowance by 10%
+
+Basic = 12000;
+HRA = 5000;
+Allowance = 3000;
+Others = 5000;
+Basic += (20/100)*Basic;
+Allowance += (10/100)*Allowance;
+info "Total Salary: " + (Basic + HRA + Allowance + Others);
+
+
+
+
+58. Department A has 5 Students- Ram, Karthik, Suresh, Venkat, Raj.
+    They have scored [s1, s2, s3, s4, s5]-[45, 70,39, 88, 30],
+                                          [54, 73, 44, 78, 66]
+                                          [63, 45, 49, 51, 55]
+                                          [63, 76, 47, 88, 41]
+                                          [77, 68, 99, 93, 93]
+    in Examination.
+    Calculate the rank of students and the average marks scored in each subject.
+
+Ram = {45, 70, 39, 88, 30};
+Karthik = {54, 73, 44, 78, 66};
+Suresh = {63, 45, 49, 51, 55};
+Venkat = {63, 76, 57, 88, 41};
+Raj = {77, 68, 99, 93, 93};
+totalMarks = {Ram.average() * Ram.size(),
+			Karthik.average() * Karthik.size(),
+			Suresh.average() * Suresh.size(),
+			Venkat.average() * Venkat.size(),
+			Raj.average() * Raj.size()};
+info totalMarks;
+for each r in totalMarks
+{
+	info totalMarks.rank(r) ;
+}
+info "Tamil: " + ((Ram.get(0) + Karthik.get(0) + Suresh.get(0) + Venkat.get(0) + Raj.get(0)) / 5);
+info "English: " + ((Ram.get(1) + Karthik.get(1) + Suresh.get(1) + Venkat.get(1) + Raj.get(1)) / 5);
+info "Maths: " + ((Ram.get(2) + Karthik.get(2) + Suresh.get(2) + Venkat.get(2) + Raj.get(2)) / 5);
+info "Science: " + ((Ram.get(3) + Karthik.get(3) + Suresh.get(3) + Venkat.get(3) + Raj.get(3)) / 5);
+info "Social: " + ((Ram.get(4) + Karthik.get(4) + Suresh.get(4) + Venkat.get(4) + Raj.get(4)) / 5);
+
+
+
+
+59. To complete a project, a team of 5 needs 48 hours designer, 
+                                        152 hours of developer,
+                                        40 hours of Marketing.
+    Find out the total days taken to complete the workk including weekend holiday.
+    [Day = 8 hours]. How many people do they need to complete it 3 days.
+
+

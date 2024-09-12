@@ -1,0 +1,156 @@
+41. For the given date, 
+    if a month is even, add 3 days to the date
+    if the year is even, add 2 months to the date
+    if the year is leap year, add 1 week to date
+    Print the result date
+
+currentDate = toString(zoho.currenttime, "dd-MMM-yyyy hh:mm:ss", "IST") ;
+info "Current Date: " + currentDate;
+year = currentDate.getYear();
+if ( currentDate.getMonth().isEven()) 
+{
+	currentDate = currentDate.addDay(3);
+	info "Add 3 Days: " + currentDate;
+}
+if ( year.isEven() ) 
+{
+	currentDate = currentDate.addMonth(2);
+	info "Add 2 Months: " + currentDate;
+}
+if ( year%4 ==0 && year % 400 ==0 || year %100 != 0) 
+{
+	currentDate = currentDate.addWeek(1);
+	info "Add 1 Week: " + currentDate;
+}
+info "Date: " + currentDate;
+
+
+
+42. Given a list of names and a name to remove from list.
+    remove all the occurences of the name and print the list.
+    i/o: {"Ram", "Gowtham", "Jai", "Manoj", "Ram", "Ananth"}
+    o/p: {"Gowtham", "Jai", "Manoj", "Ananth"}
+
+    userInput = {"Ram", "Gowtham", "Jai", "Manoj", "Ram", "Ananth"};
+name = {"Ram"};
+userInput.removeAll(name);
+info userInput;
+
+
+
+43. Given a list of numbers, print the median of smallest and largest number
+
+userInput = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+smallestNumber = userInput.smallest();
+largestNumber = userInput.largest();
+info (smallestNumber+largestNumber)/2;
+
+
+
+44. Given a list of numbers, print the median of 3ed smallest and 2ed largest
+
+userInput = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+userInput.removeElement(userInput.smallest());
+userInput.removeElement(userInput.smallest());
+smallest = userInput.smallest();
+userInput.removeElement(userInput.largest());
+largest = userInput.largest();
+info ( smallest + largest ) / 2;
+
+
+
+45. Given two lists of numbers, list1 and list2
+    add even numbers present in list2 to list1
+    remove dublicates present in list1
+    print list1
+
+list1 = {1, 2, 4, 5, 6, 8, 12, 24};
+list2 = {13, 11, 1, 42, 34, 2, 12};
+for each data in list2
+{
+	if ( data.isEven() ) 
+    {
+		list1.add(data);
+    }
+}
+info list1 ;
+info list1.distinct();
+
+
+46. Given two list of numbers, list1 and list2
+    print distinct numbers from both lists
+    print common numbers from both lists
+
+    list1 = {1, 2, 4, 5, 6, 8, 12, 24};
+list2 = {13, 11, 1, 42, 34, 2, 12};
+info "Common Numbers: " + list1.intersect(list2);
+list1.addAll(list2);
+info "Distinct Numbers : " + list1.distinct();
+
+
+47. Given a list of names, print the list that contains names present in odd index.
+    i/p: {"Ram", "Lakshman", "Manoz", "Subbu", "Varsha"}
+    index  1         2          3        4         5
+    o/p: {"Ram", "Manoz", "Varsha"}
+
+names = {"Ram", "Lakshman", "Manoz", "Subbu", "Varsha"};
+for each data in names
+{
+	index = names.indexOf(data);
+	if ( (index+1).isOdd() ) 
+    {
+		info data;
+    }
+}
+
+
+
+48. Given a list, remove the word from the list if it is present more than once.
+    i/p: {"Ram", "Gowtham", "Jai", "Manoj", "Ram", "Ananth"}
+    o/p: {"Gowtham", "Jai", "Manoj", "Ananth"}
+
+    userInput = {"Ram", "Gowtham", "Jai", "Manoj", "Ram", "Ananth"};
+ for each datas in userInput
+{
+	count = userInput.getOccurenceCount(datas);
+	if ( count > 1 ) 
+    {
+		userInput.removeAll(datas);
+    }
+}
+info userInput;
+
+
+
+49. Given a list of numbers : list1 and list2
+    find median of list1 and list2
+
+list1 = {1, 2, 4, 5, 6, 8, 12, 24};
+list2 = {13, 11, 1, 42, 34, 2, 12};
+info "List 1 Average: " + list1.average() ;
+info "List 2 Average: " + list2.average();
+
+
+
+50. In an inventory application, there is a map which contains a mapping between
+    products and their quantities. Print all the products alone in the map along 
+    with the count of the products. In the same map, check if a specific products 
+    is present or not.
+
+Products = Collection("Pencil":20, "Ruler" : 10, "Eraser" : 4, "Sharpner": 32 , "Pen":12);
+for each data in Products
+{
+	info Products.getKey(data) + " : " + data ;
+}
+product = "snacks";
+if (Products.containsKey(product) ) 
+{
+	info product + " is present in this Products.";
+}else 
+{
+	info product + " is not present in this Products.";
+}
+
+
+
+

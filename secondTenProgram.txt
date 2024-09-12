@@ -1,0 +1,157 @@
+11. print the simple interest, compound interest after Initialise a necessary inputs.
+
+principleAmount = 100;
+interest = 10;
+noOfYear = 2;
+info "Simple Interest: " + (principleAmount*interest*noOfYear) / 100;
+info "Compound Interest: " + principleAmount * (1+(interest/100)).power(noOfYear);
+
+
+
+  find the length of the given input.
+    print it.   
+    print the first half of the given string
+
+input = "it is bright and sunny day";
+info length(input);
+info "saro".length();
+info "saraswathi".len();
+info len(input);
+
+
+12. Print "Equals" if the square root of  the first number is 
+    equals to the square of the second number vice versa.
+
+a = 27;
+b=3;
+if ( a.sqrt() == b.power(2) ||  b.sqrt() == a.power(2) ) 
+{
+	info "Equals" ;
+}else 
+{
+	info "Not Equals" ;
+}
+
+
+13. print the "perfect square" if it is a perfect square
+    ex. 25 perfect square 
+    ex. 27 is not perfect square
+
+a = 41;
+square = a.sqrt() % 1;
+if ( square == 0.0 ) 
+{
+	info "Perfect Square" ;
+}else 
+{
+	info "Not Perfect Square" ;
+}
+
+
+
+14. Check whether the input string is equal or not Equality
+    Can, cAn   //Equal
+    Cane, CAN  //Not Equal
+
+a = "Can";
+b = "cAn";
+
+if ( a.equalsIgnoreCase(b) || a.lower().equals(b.lower()) )      
+{
+	info "Equals" ;
+}else 
+{
+	info "Not Equals";
+}
+
+
+
+
+15. Write a program that accept a number from the user between 1 and 7 and 
+    displays the number of its corresponding weekday.
+    [The week starts on monday]
+
+weekDays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+userInput = 4;
+info weekDays.get(userInput-1);
+
+
+
+16. print the students grade based on the mark obtained.
+    S = 95-100
+    A = 85-94
+    B = 70-84
+    C = 50-69
+    F = Below 50
+
+Mark = 69;
+if ( Mark >= 95 &&  Mark <= 100 ) //95-100
+{
+	info "S" ;
+}else if ( Mark >= 85 ) //85-94
+{
+	info "A" ;
+}else if ( Mark >= 70 ) //70-84 
+{
+	info "B" ;
+}else if ( Mark >= 50 )  //50-69
+{
+	info "C" ;
+}else 
+{
+	info "F" ;
+}
+
+
+17. print all the numbers divisible by 4.
+
+array = {20, 30, 10, 15, 16, 12, 9};
+for each a in array
+{
+	if ( a % 4  == 0) 
+    {
+		info a ;
+    }
+}
+
+
+
+18. given a list of names
+    remove a "..." specific name from the list and print the remining list
+
+name = {"Goblin", "Peter", "Octopus", "Electro", "Lizard", "Sandman", "Goblin"};
+userInput = "Octopus";
+name.removeElement(userInput) ;
+name = name.distinct();     // Need to assign a variable ERROR
+info name ;
+
+
+
+19. print all the city names starts with 'S'.
+
+cities = {"Tokyo", "Shimla", "London", "Sydney", "Boston", "San Diego", "Kashmir"};
+for each city in cities
+{
+	if ( city.startsWith("S")) 
+    {
+		info city ;
+    }
+}
+
+
+
+20. print the reverse of a given string. also check if the string is a palindrome or not
+
+userInput = "saro";
+reverseString = userInput.reverse();
+String = reverse(userInput);
+info "Reverse String: " + reverseString ;
+if ( userInput == reverseString ) 
+{
+	info "Palindrome" ;
+}else 
+{
+	info "Not Palindrome" ;
+}
+
+
